@@ -11,7 +11,7 @@ int main(void)
 	int num2;
 
 	for (num2 = 0; num2 <= 9; num2++)
-		putchar(num2 +'0');
+		putchar(num2 + '0');
 	putchar('\n');
 	return (0);
 }
