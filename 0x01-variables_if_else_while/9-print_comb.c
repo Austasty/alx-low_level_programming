@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * main - Entry point
  * A program that prints all possible combinations of single-digit numbers.
@@ -5,16 +7,17 @@
  */
 int main(void)
 {
-	int num = 0;
-
-	while (num <= 9)
+	int n;
+	for (n = 48; n <= 57; n++)
 	{
-		putchar(num + '0');
-		if (num == 9)
-			break;
+		putchar(n);
+		if (n == 57)
+		{
+			continue;
+		}
 		putchar(',');
 		putchar(' ');
-		num++;
+		n++;
 	}
 	putchar('\n');
 	return (0);
