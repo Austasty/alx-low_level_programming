@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  * A program that prints all possible combinations of single-digit numbers.
- * Return (0)
+ * Return: 0 always
  */
 
 int main(void)
