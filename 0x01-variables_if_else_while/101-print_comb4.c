@@ -12,10 +12,10 @@ int main(void)
 	int i, p, n;
 
 	for (i = '0'; i <= '9'; i++)
-	for (p = '1'; p <= '9'; p++)
-	for (n = i + p + 1; n <= '9'; n++)
+	for (p = i + 1; p <= '9'; p++)
+	for (n = p + 1; n <= '9'; n++)
 	{
-	if (n != i && n != p)
+	if (p != i && p != n)
 	putchar(i);
 	putchar(p);
 	putchar(n);
