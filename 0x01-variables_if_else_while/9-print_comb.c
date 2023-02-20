@@ -3,21 +3,21 @@
 /**
  * main - Entry point
  * A program that prints all possible combinations of single-digit numbers.
- * Return: 0 always
+ * Return (0)
  */
+
 int main(void)
 {
-	int n;
-	for (n = 48; n <= 57; n++)
+	int num = 0;
+
+	while (num <= 9)
 	{
-		putchar(n);
-		if (n == 57)
-		{
-			continue;
-		}
+		putchar(num + '0');
+		if (num == 9)
+			break;
 		putchar(',');
 		putchar(' ');
-		n++;
+		num++;
 	}
 	putchar('\n');
 	return (0);
