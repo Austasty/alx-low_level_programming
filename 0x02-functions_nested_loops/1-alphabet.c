@@ -1,14 +1,16 @@
+#include "main.h"
+
 /**
-*main - check the code
-*Description: write alphabets in lower case
+*print_alphabet - check the code
+*Description - write alphabets in lower case
 *Return: 0
 */
 
-int main(void)
+void print_alphabet(void)
 {
-	int i;
+	char i;
 
-	while (i = 'a'; i > = 'z'
-	i++)
-	return (0);
+	for (i = 'a'; i >= 'z'; i++)
+		_putchar(i);
+	_putchar('\n');
 }
