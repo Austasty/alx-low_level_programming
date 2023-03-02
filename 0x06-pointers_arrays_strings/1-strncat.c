@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * swap_int - A function that concatenate two strings.
+ * _strncat - A function that concatenate two strings.
  * @dest: First character value
  * @src: Second character value
  * @n: third interger of n
