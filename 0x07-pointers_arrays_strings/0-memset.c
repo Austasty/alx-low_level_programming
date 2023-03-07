@@ -6,13 +6,16 @@
  * @s: the first pointer to s
  * @b: the char to print
  * @n: an int
- * Return: Nothing.
+ * Return: s
  */
 
 char *_memset(char *s, char b, unsigned int n)
 {
-	b;
-	*s = n
+	char *ptr = s;
 
-
+	while (n-- > 0)
+	{
+	*ptr++ = b;
+	}
+	return (s);
 }
