@@ -4,9 +4,8 @@
 
 /**
  * print_strings - check the code
- *@n: the start of numbers
+ *@n: the start of string
  *@separator: the aurgument counter
- * Return: sum (interger)
  * Description: If separator is NULL, it is not printed.
  * If one of the strings if NULL, (nil) is printed instead.
  */
@@ -24,7 +23,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 		if (str == NULL)
 		{
-			printf("nil");
+			printf("(nil)");
 		} else
 		{
 			printf("%s", str);
