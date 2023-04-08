@@ -8,7 +8,7 @@
  * @filename: text file being read
  * @letters: number of letters to be read
  * Return: w - actual number of bytes read and printed
- * 	0 when function fails or filename is NULL.
+ *	0 when function fails or filename is NULL.
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
@@ -19,14 +19,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	FILE *ptr;
 
 	ptr = fopen(filename, "r");
-	if(ptr == NULL)
+	if (ptr == NULL)
 		return (0);
 	buffer = malloc(sizeof(char) * letters);
 	r = read(fileno(ptr), buffer, letters);
-	w = write(STDOUT_FILENO, buffer,r);
+	w = write(STDOUT_FILENO, buffer, r);
 	free(buffer);
 	fclose(ptr);
-	if(w != r)
+	if (w != r)
 		return (0);
 	return (w);
 }
