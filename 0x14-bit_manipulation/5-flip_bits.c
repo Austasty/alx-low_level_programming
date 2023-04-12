@@ -2,7 +2,6 @@
 
 /**
  * flip_bits - bits to change
- * 
  * @n: first number
  * @m: second number
  *
