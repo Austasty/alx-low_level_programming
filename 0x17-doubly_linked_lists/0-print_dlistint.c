@@ -3,7 +3,6 @@
 /**
  * print_dlistint - Prints all the elements of a dlistint_t list.
  * @h: The head pointer.
- *
  * Return: The element of a distin_t  in the list.
  */
 size_t print_dlistint(const dlistint_t *h)
