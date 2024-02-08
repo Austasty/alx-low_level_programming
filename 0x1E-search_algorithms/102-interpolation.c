@@ -1,45 +1,45 @@
 #include "search_algos.h"
 
 /**
- * interpolation_search - searches for a value in a sorted array of integers
- * using an interpolation search algorithm
+ * interpolation_search - search for a value in a sorted array of integers
+ * with an interpolation search algorithm
  * @array: pointer to first element of array to search
  * @size: number of elements in array
  * @value: value to search for
  *
- * Return: first index containing `value`, or -1 if `value` not found or
- * `array` is NULL
+ * Return: index containing `value`, or -1 if `value` not found or
+ * `array` is Empty
  */
 
 int interpolation_search(int *array, size_t size, int value)
 {
-	size_t low = 0;
-	size_t high = size - 1;
-	size_t pos;
+	size_t lower = 0;
+	size_t higher = size - 1;
+	size_t greater;
 
 	if (!array)
 		return (-1);
 
-	while ((array[high] != array[low]) &&
-	       (value >= array[low]) && (value <= array[high]))
+	while ((array[higher] != array[lower]) &&
+	       (value >= array[lower]) && (value <= array[higher]))
 	{
-		pos = low + (((double)(high - low) / (array[high] - array[low]))
-			    * (value - array[low]));
-		printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
-		if (array[pos] < value)
-			low = pos + 1;
-		else if (value < array[pos])
-			high = pos - 1;
+		greater = lower + (((double)(higher - lower) / (array[higher] - array[lower]))
+			    * (value - array[lower]));
+		printf("Value checked array[%lu] = [%d]\n", greater, array[greater]);
+		if (array[greater] < value)
+			lower = greater + 1;
+		else if (value < array[greater])
+			higher = greater - 1;
 		else
-			return (pos);
+			return (greater);
 	}
-	if (value == array[low])
+	if (value == array[lower])
 	{
-		printf("Value checked array[%lu] = [%d]\n", low, array[low]);
-		return (low);
+		printf("Value checked array[%lu] = [%d]\n", lower, array[lower]);
+		return (lower);
 	}
-	pos = low + (((double)(high - low) / (array[high] - array[low]))
-		     * (value - array[low]));
-	printf("Value checked array[%lu] is out of range\n", pos);
+	greater = lower + (((double)(higher - lower) / (array[higher] - array[lower]))
+		     * (value - array[lower]));
+	printf("Value checked array[%lu] is out of range\n", greater);
 	return (-1);
 }

@@ -2,43 +2,42 @@
 
 /**
  * binary_search - searches for a value in an integer array using a binary
- * search algorithm, not guaranteed to return lowest index if `value` appears
+ * search algorithm, not to return lowest index if `value` appears
  * twice in `array`
- * @array: pointer to first element of array to seach
- * @size: number of elements in array
+ * @array: pointer of first element of an array to search
+ * @size: number of elements in an array
  * @value: value to search for
  *
- * Return: index containing `value`, or -1 if `value` not found or
- * `array` is NULL
+ * Return: index containing `value`, or -1 if `value` not found.
  */
 
 int binary_search(int *array, size_t size, int value)
 {
-	int low, mid, high;
-	int x;
+	int lower, middle, highest;
+	int y;
 
 	if (array == NULL)
 	{
 		return (-1);
 	}
 
-	low = 0;
-	high = size - 1;
+	lower = 0;
+	highest = size - 1;
 
-	while (low <= high)
+	while (lower <= highest)
 	{
-		mid = (low + high) / 2;
+		middle = (lower + highest) / 2;
 
 		printf("Searching in array: ");
-		for (x = low; x <= high; x++)
-			printf("%i%s", array[x], x == high ? "\n" : ", ");
+		for (y = lower; y <= highest; y++)
+			printf("%i%s", array[y], y == highest ? "\n" : ", ");
 
-		if (array[mid] < value)
-			low = mid + 1;
-		else if (array[mid] > value)
-			high = mid - 1;
+		if (array[middle] < value)
+			lower = middle + 1;
+		else if (array[middle] > value)
+			highest = middle - 1;
 		else
-			return (mid);
+			return (middle);
 	}
 
 	return (-1);

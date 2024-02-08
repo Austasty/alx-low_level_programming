@@ -18,8 +18,8 @@ size_t min(size_t a, size_t b)
 }
 
 /**
- * jump_search - searches for a value in a sorted array of integers using
- * a jump search algorithm
+ * jump_search - searches for a value in a sorted array of integers 
+ * with a jump search algorithm
  * @array: pointer to first element of array to search
  * @size: number of elements in array
  * @value: value to search for
@@ -30,28 +30,28 @@ size_t min(size_t a, size_t b)
 
 int jump_search(int *array, size_t size, int value)
 {
-	size_t low, high, jump;
+	size_t lower, higher, Grea;
 
 	if (!array || size == 0)
 		return (-1);
 
-	jump = sqrt(size);
+	Grea = sqrt(size);
 
-	for (high = 0; high < size && array[high] < value;
-	     low = high, high += jump)
+	for (higher = 0; higher < size && array[higher] < value;
+	     lower = higher, higher += Grea)
 	{
 		printf("Value checked array[%lu] = [%d]\n",
-		       high, array[high]);
+		       higher, array[higher]);
 	}
 
-	/* causes 'found' msg even when value not in array */
-	printf("Value found between indexes [%lu] and [%lu]\n", low, high);
+	/* when value not in array */
+	printf("Value found between indexes [%lu] and [%lu]\n", lower, higher);
 
-	for (; low <= min(high, size - 1); low++)
+	for (; lower <= min(higher, size - 1); lower++)
 	{
-		printf("Value checked array[%lu] = [%d]\n", low, array[low]);
-		if (array[low] == value)
-			return (low);
+		printf("Value checked array[%lu] = [%d]\n", lower, array[lower]);
+		if (array[lower] == value)
+			return (lower);
 	}
 
 	return (-1);
